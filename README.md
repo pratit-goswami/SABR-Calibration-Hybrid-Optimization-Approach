@@ -21,7 +21,7 @@ The objective is to balance speed (calibration runtime) and fit quality (RMSE er
 
 The SABR model specifies forward rate dynamics:
 
-$${d_F_t = \sigma_t F_t^\beta d_W_t},  {d\sigma_t = \nu \sigma_t dZ_t,}  {d_W_t d_Z_t = \rho}$$ 
+$${d_F_t} = {\sigma_t} {F_t^\beta} {d_W_t},  {d\sigma_t} = {\nu} {\sigma_t} {dZ_t,}  {d_W_t} {d_Z_t} = {\rho}$$ 
 
 where $\alpha$ (volatility level), $\beta$ (elasticity parameter), $\rho$ (correlation), and $\nu$ (volatility of volatility) are calibrated. Here $F_t$ stands for forward price or underlying asset price, $\sigma_t$ means instantaneous volatility of F_t, W_t and Z_t are Brownian motions.
 
