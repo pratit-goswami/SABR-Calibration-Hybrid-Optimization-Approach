@@ -43,19 +43,14 @@ All three methods successfully calibrate the SABR parameters, but with different
 • Differential Evolution is more robust but slower,  
 • Hybrid DE → L-BFGS-B achieves the best trade-off, producing: lowest RMSE, good computational efficiency, smooth smile fit across strikes.
 
-\begin{center}
-        \begin{tabular}{|l||c|c|c|}
-        \hline
-        \mbox{}             & $i = 1$               & $i = 2$                   & $i = 3$ \\
-        \hline \hline
-        $n = 0 \pmod{3}$    & $\{1, \ldots, k\}$    & $\{k+1, \ldots, 2k\}$     & $\{2k+1, \ldots, 3k\}$ \\
-        \hline
-        $n = 1 \pmod{3}$    & $\{1, \ldots, k+1\}$  & $\{k+2, \ldots, 2k+1\}$   & $\{2k+2, \ldots, 3k+1\}$ \\
-        \hline
-        $n = 2 \pmod{3}$    & $\{1, \ldots, k+1\}$  &  $\{k+2, \ldots, 2k+2\}$  & $\{2k+3, \ldots, 3k+2\}$ \\
-        \hline
-        \end{tabular}
-    \end{center}
+## Calibration Results
+
+| Calibration Method | RMSE | Runtime |
+|--------------------|-----:|--------:|
+| L-BFGS-B | 0.21612 | 0.01 s |
+| Differential Evolution | 0.13143 | 2.26 s |
+| Hybrid DE→L-BFGS-B | 0.13135 | 0.18 s |
+
 
 The Speed vs Accuracy scatter plot visually confirms this relationship and a 3D surface plot of strike × expiry × implied volatility compares market surface with the SABR-generated surface, showing strong agreement across maturities.
 
