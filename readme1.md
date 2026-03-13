@@ -33,7 +33,7 @@ $$RMSE = \sqrt{\frac{1}{N} \sum_{i=1}^N (\sigma_{model}(K_i)) - (\sigma_{market}
 
 ---
 
-## 3. Mathodology and Results
+## 3. Methodology and Results
 
 The calibration is repeated under the three methods (L-BFGS-B, Differential Evolution, Hybrid (DE → L-BFGS-B)), measuring: RMSE (model fit error), computation time.
 
