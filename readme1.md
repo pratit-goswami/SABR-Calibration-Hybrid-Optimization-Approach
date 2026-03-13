@@ -43,7 +43,7 @@ All three methods successfully calibrate the SABR parameters, but with different
 • Differential Evolution is more robust but slower,  
 • Hybrid DE → L-BFGS-B achieves the best trade-off, producing: lowest RMSE, good computational efficiency, smooth smile fit across strikes.
 
-# Calibration Results
+Calibration Results
 
 | Calibration Method | RMSE | Runtime |
 |--------------------|-----:|--------:|
