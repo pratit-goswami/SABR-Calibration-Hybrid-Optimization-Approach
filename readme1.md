@@ -1,7 +1,7 @@
 # FAST AND ACCURATE SABR CALIBRATION FOR AAPL OPTIONS: HYBRID OPTIMIZATION APPROACH 
 
 
-**Author:** PRATIT GOSWAMI
+**Author:** Pratit Goswmai
 
 ## 1. Introduction
 
