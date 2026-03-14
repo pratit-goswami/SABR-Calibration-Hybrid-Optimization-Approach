@@ -1,4 +1,4 @@
-# FAST AND ACCURATE SABR CALIBRATION FOR AAPL OPTIONS: HYBRID OPTIMIZATION APPROACH 
+# Fast and Accurate SABR Calibration for AAPL Options: Hybrid Optimization Approach 
 
 
 **Author:** Pratit Goswmai
