@@ -1,7 +1,7 @@
-# FAST AND ACCURATE SABR CALIBRATION FOR AAPL OPTIONS: A HYBRID OPTIMIZATION APPROACH 
+# Fast and Accurate SABR Calibration for AAPL Options: Hybrid Optimization Approach 
 
 
-**Author:** PRATIT GOSWAMI
+**Author:** Pratit Goswami
 
 ## 1. Introduction
 
@@ -21,9 +21,9 @@ The objective is to balance speed (calibration runtime) and fit quality (RMSE er
 
 The SABR model specifies forward rate dynamics:
 
-$$dF_t = {\sigma_t} F_t{^\beta} dW_t, \hspace{1cm} {d\sigma_t} = {\nu} {\sigma_t} {dZ_t,} \hspace{1cm} dW_t d{Z_t} = {\rho}$$ 
+$$dF_t = {\alpha_t} F_t{^\beta} dW_t, \hspace{1cm} {d\alpha_t} = {\nu} {\alpha_t} {dZ_t,} \hspace{1cm} dW_t d{Z_t} = {\rho} dt$$ 
 
-where $\alpha$ (volatility level), $\beta$ (elasticity parameter), $\rho$ (correlation), and $\nu$ (volatility of volatility) are calibrated. Here $F_t$ stands for forward price or underlying asset price, $\sigma_t$ means instantaneous volatility of F_t, W_t and Z_t are Brownian motions.
+where $\alpha$ (volatility level), $\beta$ (elasticity parameter), $\rho$ (correlation), and $\nu$ (volatility of volatility) are calibrated. Here $F_t$ stands for forward price or underlying asset price, $\alpha_t$ means instantaneous volatility of F_t and {W_t, Z_t} are Brownian motions.
 
 The Hagan (2002) approximation is used to compute implied volatility efficiently.
 
@@ -33,7 +33,7 @@ $$RMSE = \sqrt{\frac{1}{N} \sum_{i=1}^N (\sigma_{model}(K_i)) - (\sigma_{market}
 
 ---
 
-## 3. Results
+## 3. Methodology and Results
 
 The calibration is repeated under the three methods (L-BFGS-B, Differential Evolution, Hybrid (DE → L-BFGS-B)), measuring: RMSE (model fit error), computation time.
 
@@ -42,6 +42,12 @@ All three methods successfully calibrate the SABR parameters, but with different
 • L-BFGS-B is fast but sometimes lands in suboptimal minima,  
 • Differential Evolution is more robust but slower,  
 • Hybrid DE → L-BFGS-B achieves the best trade-off, producing: lowest RMSE, good computational efficiency, smooth smile fit across strikes.
+
+| Calibration Method | RMSE | Runtime |
+|--------------------|-----:|--------:|
+| L-BFGS-B | 0.21612 | 0.01 s |
+| Differential Evolution | 0.13143 | 2.26 s |
+| Hybrid DE→L-BFGS-B | 0.13135 | 0.18 s |
 
 The Speed vs Accuracy scatter plot visually confirms this relationship and a 3D surface plot of strike × expiry × implied volatility compares market surface with the SABR-generated surface, showing strong agreement across maturities.
 
